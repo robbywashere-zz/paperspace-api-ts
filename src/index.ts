@@ -530,7 +530,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<LoginUserResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/apiTokens/createPublic";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -543,7 +543,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = [];
       const requiredBodyParams: Array<string> = ["email", "password"];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -589,7 +589,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<JobsArtifactsGetResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/artifactsGet";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -597,7 +597,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -647,7 +647,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<JobsArtifactsListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/artifactsList";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -655,7 +655,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -741,7 +741,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/createJob";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -775,7 +775,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = [];
       const requiredBodyParams: Array<string> = ["container"];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -823,7 +823,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<JobsMachineTypesResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/getClusterAvailableMachineTypes";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -888,7 +888,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<GetJobResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/getJob";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -896,7 +896,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -956,7 +956,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<JobsListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/getJobs";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1017,7 +1017,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<JobsLogsResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/logs";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1025,7 +1025,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1075,7 +1075,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/{jobId}/artifactsDestroy";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1088,7 +1088,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1129,7 +1129,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<JobsCloneResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/{jobId}/clone";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1137,7 +1137,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1178,7 +1178,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/{jobId}/destroy";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1186,7 +1186,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1227,7 +1227,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/jobs/{jobId}/stop";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1235,7 +1235,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["jobId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1311,7 +1311,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<MachinesCreateResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/createSingleMachinePublic";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1349,7 +1349,7 @@ export class PaperspaceApi {
         "size",
         "templateId"
       ];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1391,7 +1391,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<MachinesAvailabilityResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/getAvailability";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1399,7 +1399,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["region", "machineType"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1441,7 +1441,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<GetMachineResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/getMachinePublic";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1449,7 +1449,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1541,7 +1541,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<MachinesListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/getMachines";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1612,7 +1612,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<MachinesUtilizationResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/getUtilization";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1620,7 +1620,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["machineId", "billingMonth"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1664,7 +1664,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/{machineId}/destroyMachine";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1677,7 +1677,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1718,7 +1718,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/{machineId}/restart";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1726,7 +1726,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1767,7 +1767,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/{machineId}/start";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1775,7 +1775,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1816,7 +1816,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/{machineId}/stop";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1824,7 +1824,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1879,7 +1879,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/machines/{machineId}/updateMachinePublic";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -1900,7 +1900,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = ["machineId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -1955,7 +1955,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<NetworksListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/networks/getNetworks";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2018,7 +2018,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<ScriptsCreateResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/scripts/createScript";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2039,7 +2039,7 @@ export class PaperspaceApi {
       });
       const requiredParams: Array<string> = [];
       const requiredBodyParams: Array<string> = ["scriptName"];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -2079,7 +2079,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<ScriptsShowResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/scripts/getScript";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2087,7 +2087,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["scriptId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -2129,7 +2129,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<ScriptsTextResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/scripts/getScriptText";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2137,7 +2137,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["scriptId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -2195,7 +2195,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<ScriptsListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/scripts/getScripts";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2247,7 +2247,7 @@ export class PaperspaceApi {
   }): Promise<ResponseWithBody<void>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/scripts/{scriptId}/destroy";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2255,7 +2255,7 @@ export class PaperspaceApi {
       headers["Accept"] = "application/json";
       const requiredParams: Array<string> = ["scriptId"];
       const requiredBodyParams: Array<string> = [];
-      [...requiredParams, requiredBodyParams].forEach(rp => {
+      [...requiredParams, ...requiredBodyParams].forEach(rp => {
         if (!(rp in parameters)) {
           throw new Error(`Missing required parameter ${rp}`);
         }
@@ -2312,7 +2312,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<TemplatesListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/templates/getTemplates";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
@@ -2376,7 +2376,7 @@ export class PaperspaceApi {
   ): Promise<ResponseWithBody<UsersListResponse>> {
     const domain = parameters.$domain ? parameters.$domain : this.domain;
     let path = "/users/getUsers";
-    let body: any;
+    let body: any = {};
     let queryParameters: any = {};
     let headers: any = {};
     let form: any = {};
