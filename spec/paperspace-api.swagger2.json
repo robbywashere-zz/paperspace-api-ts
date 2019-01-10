@@ -18,17 +18,15 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "request body params",
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/LoginUserRequestBody"
-            }
+        "parameters": [{
+          "description": "request body params",
+          "in": "body",
+          "name": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/LoginUserRequestBody"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -55,8 +53,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Id of the job to get artifacts for",
             "in": "query",
             "name": "jobId",
@@ -111,8 +108,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Id of the job to list artifacts for",
             "in": "query",
             "name": "jobId",
@@ -177,17 +173,15 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "request body params",
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/JobsCreateRequestBody"
-            }
+        "parameters": [{
+          "description": "request body params",
+          "in": "body",
+          "name": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/JobsCreateRequestBody"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "Expected response to a valid request",
@@ -214,8 +208,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional region to match on",
             "in": "query",
             "name": "region",
@@ -270,27 +263,18 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the job to wait for",
-            "in": "query",
-            "name": "jobId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "description": "Name of the state to wait for",
-            "in": "query",
-            "name": "state",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the job to wait for",
+          "in": "query",
+          "name": "jobId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
             "schema": {
-              "$ref": "#/definitions/JobsWaitforResponse"
+              "$ref": "#/definitions/GetJobResponse"
             }
           },
           "default": {
@@ -303,8 +287,8 @@
         "tags": [
           "jobs"
         ],
-        "operationId": "JobsWaitfor",
-        "summary": "Wait for the job with the given id to enter a certain job state"
+        "operationId": "GetJob",
+        "summary": "Get a job by jobId"
       }
     },
     "/jobs/getJobs": {
@@ -312,8 +296,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional project to match on.  If neither project nor projectId are provided, this is taken from the .ps_project/config.json file, or the current directory name.  Specify 'all' to list jobs for all projects associated with the user or team if the user is on a team.",
             "in": "query",
             "name": "project",
@@ -403,8 +386,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Id of the job to logs",
             "in": "query",
             "name": "jobId",
@@ -469,8 +451,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "The id of the job to destroy artifacts for",
             "in": "path",
             "name": "jobId",
@@ -509,15 +490,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the job to clone",
-            "in": "path",
-            "name": "jobId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the job to clone",
+          "in": "path",
+          "name": "jobId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -544,15 +523,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "The id of the job to destroy",
-            "in": "path",
-            "name": "jobId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "The id of the job to destroy",
+          "in": "path",
+          "name": "jobId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -576,15 +553,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the job to shut down",
-            "in": "path",
-            "name": "jobId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the job to shut down",
+          "in": "path",
+          "name": "jobId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -611,17 +586,15 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "request body params",
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/MachinesCreateRequestBody"
-            }
+        "parameters": [{
+          "description": "request body params",
+          "in": "body",
+          "name": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/MachinesCreateRequestBody"
           }
-        ],
+        }],
         "responses": {
           "201": {
             "description": "Expected response to a valid request",
@@ -648,8 +621,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Name of the region: either 'East Coast (NY2)', 'West Coast (CA1)', or 'Europe (AMS1)'",
             "in": "query",
             "name": "region",
@@ -690,27 +662,18 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the machine to wait for",
-            "in": "query",
-            "name": "machineId",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "description": "Name of the state to wait for, either 'off', 'serviceready', 'ready'",
-            "in": "query",
-            "name": "state",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the machine to wait for",
+          "in": "query",
+          "name": "machineId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
             "schema": {
-              "$ref": "#/definitions/MachinesWaitforResponse"
+              "$ref": "#/definitions/GetMachineResponse"
             }
           },
           "default": {
@@ -723,8 +686,8 @@
         "tags": [
           "machines"
         ],
-        "operationId": "MachinesWaitfor",
-        "summary": "Wait for the machine with the given id to enter a certain machine state"
+        "operationId": "GetMachine",
+        "summary": "Get machine by machine id"
       }
     },
     "/machines/getMachines": {
@@ -732,8 +695,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional machine id to match on. Note: must be specified as \"machineId\", not \"id\".",
             "in": "query",
             "name": "machineId",
@@ -935,8 +897,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Id of the machine to get utilization data for",
             "in": "query",
             "name": "machineId",
@@ -980,8 +941,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "The id of the machine to destroy",
             "in": "path",
             "name": "machineId",
@@ -1020,15 +980,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the machine to restart",
-            "in": "path",
-            "name": "machineId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the machine to restart",
+          "in": "path",
+          "name": "machineId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -1052,15 +1010,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the machine to start",
-            "in": "path",
-            "name": "machineId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the machine to start",
+          "in": "path",
+          "name": "machineId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -1084,15 +1040,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the machine to shut down",
-            "in": "path",
-            "name": "machineId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the machine to shut down",
+          "in": "path",
+          "name": "machineId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -1119,8 +1073,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Id of the machine to update",
             "in": "path",
             "name": "machineId",
@@ -1159,8 +1112,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional network id to match on",
             "in": "query",
             "name": "id",
@@ -1239,17 +1191,15 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "request body params",
-            "in": "body",
-            "name": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ScriptsCreateRequestBody"
-            }
+        "parameters": [{
+          "description": "request body params",
+          "in": "body",
+          "name": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ScriptsCreateRequestBody"
           }
-        ],
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -1276,15 +1226,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the script to show",
-            "in": "query",
-            "name": "scriptId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the script to show",
+          "in": "query",
+          "name": "scriptId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -1311,15 +1259,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "Id of the script to get text for",
-            "in": "query",
-            "name": "scriptId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "Id of the script to get text for",
+          "in": "query",
+          "name": "scriptId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "200": {
             "description": "Expected response to a valid request",
@@ -1346,8 +1292,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional script id to match on",
             "in": "query",
             "name": "id",
@@ -1430,15 +1375,13 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
-            "description": "The id of the script to destroy",
-            "in": "path",
-            "name": "scriptId",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [{
+          "description": "The id of the script to destroy",
+          "in": "path",
+          "name": "scriptId",
+          "required": true,
+          "type": "string"
+        }],
         "responses": {
           "204": {
             "description": "Expected response to a valid request"
@@ -1462,8 +1405,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional template id to match on",
             "in": "query",
             "name": "id",
@@ -1546,8 +1488,7 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [
-          {
+        "parameters": [{
             "description": "Optional user id to match on",
             "in": "query",
             "name": "id",
@@ -2155,7 +2096,7 @@
       },
       "type": "object"
     },
-    "JobsWaitforResponse": {
+    "GetJobResponse": {
       "properties": {
         "artifactsDirectory": {
           "type": "string"
@@ -2746,7 +2687,7 @@
       },
       "type": "object"
     },
-    "MachinesWaitforResponse": {
+    "GetMachineResponse": {
       "properties": {
         "agentType": {
           "type": "string"
@@ -3089,10 +3030,8 @@
       "type": "apiKey"
     }
   },
-  "security": [
-    {
-      "api_key": []
-    }
-  ],
+  "security": [{
+    "api_key": []
+  }],
   "x-components": {}
 }
