@@ -1,0 +1,40 @@
+{
+  "name": "paperspace-api-ts",
+  "description": "unoffical typescript paperspace api",
+  "version": "1.0.0",
+  "types": "dist/cjs/index.d.ts",
+  "main": "dist/umd/paperspace-api-ts.js",
+  "es2015": "dist/es2015/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/paperspace-api-ts.min.js",
+  "license": "MIT",
+  "author": "robby <robby.polana@gmail.com>",
+  "peerDependencies": {
+    "superagent": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/superagent": "^3.8.6",
+    "docdash": "^1.0.2",
+    "jsdoc": "^3.5.5",
+    "rollup": "^1.1.0",
+    "superagent": "^4.1.0",
+    "typescript": "^3.2.2",
+    "uglify-js": "^3.4.9"
+  },
+  "scripts": {
+    "docs":"jsdoc -c jsdoc.json -R README.md",
+    "build": "npm run build:es2015 && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:umd:min",
+    "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "build:umd": "rollup --format umd --name PaperspaceApi -m  --o dist/umd/paperspace-api-ts.js dist/esm/index.js",
+    "build:umd:min": "cd dist/umd && uglifyjs --compress --mangle --source-map --output paperspace-api-ts.min.js -- paperspace-api-ts.js && gzip paperspace-api-ts.min.js -c > paperspace-api-ts.min.js.gz"
+  }
+}
