@@ -10,15 +10,17 @@ import PaperspaceApi from "../src";
       password: process.env.PASSWORD as string
     })
     .catch(e => {
-      console.error(`Could not login, check credentials.`);
-      throw e;
+      if (e.status === 401)
+        throw new Error(`!!! Could not login, check credentials.`);
+      throw new Error(e);
     });
 
   const { body: templates } = await paperClient.TemplatesList();
 
   const label = "Ubuntu 14.04 Server";
 
-  const templateId = (templates.find(t => t.label === label)! || {}).id;
+  const templateId = (templates.find(t => t.label === label) || { id: null })
+    .id;
 
   if (!templateId) throw new Error(`Error: '${label}' template not found.`);
 
