@@ -1,5 +1,6 @@
 // import PaperspaceApi from "paperspace-api-ts";
 import PaperspaceApi from "../src";
+import { PaperspaceClient } from "../src/client";
 
 (async function() {
   const paperClient = new PaperspaceApi(null, console);
@@ -11,7 +12,7 @@ import PaperspaceApi from "../src";
     })
     .catch(e => {
       if (e.status === 401)
-        throw new Error(`!!! Could not login, check credentials.`);
+        throw new Error(`401: Could not login, check credentials.`);
       throw new Error(e);
     });
 
@@ -35,7 +36,7 @@ import PaperspaceApi from "../src";
     templateId
   });
 
-  await PaperspaceApi.WaitFor(
+  await PaperspaceClient.WaitFor(
     () => paperClient.GetMachine({ machineId }),
     ({ body: { state } }) => state === "ready"
   );

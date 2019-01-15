@@ -1,4 +1,6 @@
 {
+  "include": ["./src"],
+  "exclude": ["./example"],
   "compilerOptions": {
     /* Basic Options */
     "target": "es5",
@@ -18,7 +20,6 @@
     "sourceMap": true,
     /* Generates corresponding '.map' file. */
     "outDir": "./dist",
-    "rootDir": "./src",
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "removeComments": true,                /* Do not emit comments to output. */
@@ -30,7 +31,8 @@
     /* Strict Type-Checking Options */
     "strict": true,
     /* Enable all strict type-checking options. */
-    // "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    "noImplicitAny": true,
+    /* Raise error on expressions and declarations with an implied 'any' type. */
     // "strictNullChecks": true,              /* Enable strict null checks. */
     // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
     // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
